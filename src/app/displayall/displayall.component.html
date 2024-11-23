@@ -1,0 +1,30 @@
+<h1>All Student Details</h1>
+<button routerLink="/insertdb/">Insert Details</button>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mark</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of GetData">
+                <td>{{p.Name}}</td>
+                <td>{{p.Age}}</td>
+                <td>{{p.Mark}}</td>
+                <td>
+                    <button class="delete" title="Delete Student" (click)="delete(p.Id)">Delete</button>
+                </td>
+                <td>
+                    <button routerLink="/details/{{p.Id}}">Details</button>
+                </td>
+                <td>
+                    <button routerLink="/editdetails/{{p.Id}}">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
